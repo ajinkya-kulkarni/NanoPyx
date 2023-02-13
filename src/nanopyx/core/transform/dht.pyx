@@ -5,6 +5,7 @@ from libc.math cimport cos, sin, pi
 import numpy as np
 cimport numpy as np
 
+
 cdef void _dht2d_core(double[:,:] image, double[:,:] image_ht, int sign) nogil:
     """
     Compute the discrete Hartley transform of a 2D array.
@@ -46,6 +47,7 @@ cdef void _dht2d_core(double[:,:] image, double[:,:] image_ht, int sign) nogil:
         for j in range(h):
             for i in range(w):
                 image_ht[j, i] = g_ht[j, i] / 2
+
 
 def dht2d(image: np.ndarray):
     """
